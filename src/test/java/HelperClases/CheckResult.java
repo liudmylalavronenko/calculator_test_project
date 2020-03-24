@@ -16,9 +16,9 @@ public class CheckResult {
     private String pc_line;
 
     // read downloaded file, check if calc result the same as PC result
-    public void compare_PC_and_calc_results(int first, int second, String operation) throws IOException {
+    public void compare_PC_and_calc_results(int first, int second, String operation, String path_to_file) throws IOException {
         do_operation(first,second,operation);
-        read_file();
+        read_file(path_to_file);
         compare_results();
     }
 
@@ -38,8 +38,8 @@ public class CheckResult {
       pc_line = first + operation + second + "=" + result_PC;
    }
     //read file and save line to string
-    private void read_file() throws FileNotFoundException {
-        File file = new File("F:\\Programs\\paska_kalkula.txt");
+    private void read_file(String path_to_file) throws FileNotFoundException {
+        File file = new File(path_to_file);
         Scanner sc = new Scanner(file);
         while (sc.hasNextLine()) {
             line_from_file = sc.nextLine();

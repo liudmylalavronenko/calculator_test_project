@@ -30,7 +30,7 @@ private CalculatorPage calculatorPage = new CalculatorPage(chromeDriver);
     public void clear_calc_page() {
         delete_button();
         clear_button();
-        System.out.println("Data is cleared from bord");
+        System.out.println("Data is cleared from board");
 
     }
 
